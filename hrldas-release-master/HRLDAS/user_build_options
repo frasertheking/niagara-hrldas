@@ -1,0 +1,23 @@
+
+#=============================================================================================
+#  Options for Linux with gfortran (not fully tested)
+#=============================================================================================
+
+ COMPILERF90    =       gfortran
+ FREESOURCE     =       -ffree-form  -ffree-line-length-none
+ F90FLAGS       =       -g -fconvert=big-endian -fbounds-check -fno-range-check #-fno-underscoring
+ MODFLAG        =       -I
+ LDFLAGS        =       
+ CPP            =       cpp
+ CPPFLAGS       =       -P -traditional -D_GFORTRAN_
+ LIBS           =       
+ LIBJASPER      =       -ljpeg -ljasper
+ INCJASPER      =       -I/scinet/niagara/software/2018a/opt/gcc-7.3.0/jasper/2.0.14/include/jasper
+ NETCDFMOD      =       -I/scinet/niagara/software/2018a/opt/gcc-7.3.0/netcdf/4.6.1/include #-I$EBROOTNETCDFMINFORTRAN/include #-I/usr/local/Cellar/netcdf/4.6.3_1/include
+ NETCDFLIB      =       -lnetcdf -lnetcdff
+ BZIP2          =       NO
+ BZIP2_LIB      =       -lbz2
+ BZIP2_INCLUDE  =       -I/opt/local/include
+ RM             =       rm -f
+ CC             =       gcc
+

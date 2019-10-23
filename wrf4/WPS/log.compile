@@ -1,0 +1,1360 @@
+============================================================================================== 
+ 
+Version 4.1
+ 
+Darwin v1040-wn-rt-c-6-198.campus-dynamic.uwaterloo.ca 18.7.0 Darwin Kernel Version 18.7.0: Thu Jun 20 18:42:21 PDT 2019; root:xnu-4903.270.47~4/RELEASE_X86_64 x86_64
+ 
+GNU Fortran (Homebrew GCC 9.2.0) 9.2.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ 
+============================================================================================== 
+ 
+ 
+**** Compiling WPS and all utilities ****
+ 
+/bin/rm -f cio.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID  -c cio.c	
+/bin/rm -f constants_module.o constants_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include constants_module.F > constants_module.f90
+constants_module.F:15:15: warning: missing terminating ' character [-Winvalid-pp-token]
+   ! with NCEP's routines and grids.
+              ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c constants_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f misc_definitions_module.o misc_definitions_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include misc_definitions_module.F > misc_definitions_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c misc_definitions_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f parallel_module.o parallel_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include parallel_module.F > parallel_module.f90
+parallel_module.F:215:26: warning: missing terminating ' character [-Winvalid-pp-token]
+   ! Copied from RSL_LITE's task_for_point.c until a good way can be found to
+                         ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c parallel_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_debug.o module_debug.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_debug.F > module_debug.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_debug.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f gridinfo_module.o gridinfo_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include gridinfo_module.F > gridinfo_module.f90
+gridinfo_module.F:470:25: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! If the user hasn't supplied a known_x and known_y, assume the center of domain 1
+                        ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c gridinfo_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f wrf_debug.o wrf_debug.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include wrf_debug.F > wrf_debug.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c wrf_debug.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f bitarray_module.o bitarray_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include bitarray_module.F > bitarray_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c bitarray_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_stringutil.o module_stringutil.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_stringutil.F > module_stringutil.f90
+module_stringutil.F:67:53: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                    ^
+module_stringutil.F:67:55: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                      ^
+2 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_stringutil.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f hash_module.o hash_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include hash_module.F > hash_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c hash_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_map_utils.o module_map_utils.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_map_utils.F > module_map_utils.f90
+module_map_utils.F:19:21: warning: missing terminating ' character [-Winvalid-pp-token]
+! obtained from NCEP's w3 library.  The original NCEP routines were less
+                    ^
+module_map_utils.F:58:46: warning: missing terminating ' character [-Winvalid-pp-token]
+!          line which is parallel to the grid's y-axis (j-direction), along
+                                             ^
+module_map_utils.F:113:55: warning: missing terminating ' character [-Winvalid-pp-token]
+!       not the values returned are within your domain's bounds.  All values
+                                                      ^
+module_map_utils.F:119:32: warning: missing terminating '"' character [-Winvalid-pp-token]
+!  Hoke, Hayes, and Renninger, "Map Preojections and Grid Systems for
+                               ^
+module_map_utils.F:120:37: warning: missing terminating '"' character [-Winvalid-pp-token]
+!       Meteorological Applications." AFGWC/TN-79/003(Rev), Air Weather
+                                    ^
+module_map_utils.F:1132:70: warning: missing terminating '"' character [-Winvalid-pp-token]
+      REAL, INTENT(IN)             :: truelat2  !   "   "  "   "     "
+                                                                     ^
+module_map_utils.F:1143:14: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! Earth's surface at this latitude.  For secant projections, the cone
+             ^
+module_map_utils.F:1144:29: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! intersects the Earth's surface at each of the distinctly different
+                            ^
+module_map_utils.F:1922:67: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  Now, these could be upside down from what we want, so let's check.
+                                                                  ^
+module_map_utils.F:1969:66: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  ordinary Legendre polynomial of degree NLAT using Newton's
+                                                                 ^
+module_map_utils.F:2144:28: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  relative east/west'ness of the longitude and the starting longitude are consistent
+                           ^
+11 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_map_utils.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f list_module.o list_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include list_module.F > list_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c list_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f llxy_module.o llxy_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include llxy_module.F > llxy_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c llxy_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f source_data_module.o source_data_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include source_data_module.F > source_data_module.f90
+source_data_module.F:28:51: warning: empty character constant [-Winvalid-pp-token]
+   character (len=128) :: last_output_fieldname = ''
+                                                  ^
+source_data_module.F:353:51: warning: missing terminating ' character [-Winvalid-pp-token]
+!BUG: Are these initializations needed now that we've added initializations for
+                                                  ^
+source_data_module.F:954:88: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                       ^
+source_data_module.F:954:90: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                         ^
+source_data_module.F:959:73: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                        ^
+source_data_module.F:959:75: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                          ^
+source_data_module.F:960:93: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                            ^
+source_data_module.F:960:95: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                              ^
+source_data_module.F:967:88: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                       ^
+source_data_module.F:967:90: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                         ^
+source_data_module.F:972:73: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                        ^
+source_data_module.F:972:75: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                          ^
+source_data_module.F:973:93: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                            ^
+source_data_module.F:973:95: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                              ^
+source_data_module.F:980:88: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                       ^
+source_data_module.F:980:90: warning: empty character constant [-Winvalid-pp-token]
+                        if (buffer(ispace:ispace) == '"' .or. buffer(ispace:ispace) == '''') iquoted = mod(iquoted+1,2)
+                                                                                         ^
+source_data_module.F:983:73: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                        ^
+source_data_module.F:983:75: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(i+1:i+1) == '"' .or. buffer(i+1:i+1) == '''') i = i + 1
+                                                                          ^
+source_data_module.F:984:93: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                            ^
+source_data_module.F:984:95: warning: empty character constant [-Winvalid-pp-token]
+                     if (buffer(ispace-1:ispace-1) == '"' .or. buffer(ispace-1:ispace-1) == '''') ispace = ispace - 1
+                                                                                              ^
+source_data_module.F:1379:25: warning: empty character constant [-Winvalid-pp-token]
+         derived_from = ''
+                        ^
+source_data_module.F:1454:25: warning: empty character constant [-Winvalid-pp-token]
+         derived_from = ''
+                        ^
+22 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c source_data_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f output_module.o output_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include output_module.F > output_module.f90
+output_module.F:1147:15: warning: missing terminating ' character [-Winvalid-pp-token]
+! BUG: Shouldn't we set sd/ed to be domain_start/domain_end?
+              ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c output_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f queue_module.o queue_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include queue_module.F > queue_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c queue_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f interp_module.o interp_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include interp_module.F > interp_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c interp_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f proc_point_module.o proc_point_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include proc_point_module.F > proc_point_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c proc_point_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f smooth_module.o smooth_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include smooth_module.F > smooth_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c smooth_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f process_tile_module.o process_tile_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include process_tile_module.F > process_tile_module.f90
+process_tile_module.F:1818:83: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                            !   setting to 0, we hope to induce a "divide
+                                                                                  ^
+process_tile_module.F:1819:56: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                            !   by zero" error if they are
+                                                       ^
+process_tile_module.F:1836:86: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                               !   setting to 0, we hope to induce a "divide
+                                                                                     ^
+process_tile_module.F:1837:59: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                               !   by zero" error if they are
+                                                          ^
+process_tile_module.F:1854:86: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                               !   setting to 0, we hope to induce a "divide
+                                                                                     ^
+process_tile_module.F:1855:59: warning: missing terminating '"' character [-Winvalid-pp-token]
+                                               !   by zero" error if they are
+                                                          ^
+6 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c process_tile_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f geogrid.o geogrid.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include geogrid.F > geogrid.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c geogrid.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f read_geogrid.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GEOGRID  -c read_geogrid.c	
+read_geogrid.c:23:9: warning: 'BIG_ENDIAN' macro redefined [-Wmacro-redefined]
+#define BIG_ENDIAN    0
+        ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h:94:9: note: previous definition is here
+#define BIG_ENDIAN      __DARWIN_BIG_ENDIAN
+        ^
+read_geogrid.c:24:9: warning: 'LITTLE_ENDIAN' macro redefined [-Wmacro-redefined]
+#define LITTLE_ENDIAN 1
+        ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h:93:9: note: previous definition is here
+#define LITTLE_ENDIAN   __DARWIN_LITTLE_ENDIAN
+        ^
+read_geogrid.c:124:62: warning: shift count >= width of type [-Wshift-count-overflow]
+            if ((*isigned) && (ival > (1 << 31))) ival -= (1 << 32);
+                                                             ^  ~~
+3 warnings generated.
+gfortran  -o geogrid.exe cio.o wrf_debug.o bitarray_module.o constants_module.o module_stringutil.o geogrid.o gridinfo_module.o hash_module.o interp_module.o list_module.o llxy_module.o misc_definitions_module.o module_debug.o module_map_utils.o output_module.o parallel_module.o process_tile_module.o proc_point_module.o queue_module.o read_geogrid.o smooth_module.o source_data_module.o \
+		/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_driver_constants.o \
+		/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/pack_utils.o /Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_machine.o \
+		/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_internal_header_util.o \
+		-I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include \
+		-L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -lio_grib1 -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -lio_grib_share -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -lwrfio_int -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -lwrfio_nf -L/usr/local/Cellar/netcdf/4.6.3_1/lib -lnetcdff -lnetcdf \
+		
+( cd src/ngl ; make -i -r DEV_TOP="/Users/fraserking/Development/NoahMP/extra/wrf4/WPS" CC="gcc" FC="gfortran" RANLIB="ranlib" all )
+( cd w3 ; make -i -r DEV_TOP="/Users/fraserking/Development/NoahMP/extra/wrf4/WPS" all ; ranlib libw3.a )
+Makefile:44: warning: overriding commands for target `.f.o'
+/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/configure.wps:102: warning: ignoring old commands for target `.f.o'
+Makefile:48: warning: overriding commands for target `.c.o'
+/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/configure.wps:98: warning: ignoring old commands for target `.c.o'
+/bin/rm -f bacio_module.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c bacio_module.f 
+/bin/rm -f getgb.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgb.f 
+/bin/rm -f getgbmh.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbmh.f 
+/bin/rm -f putgbex.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgbex.f 
+/bin/rm -f w3fi73.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi73.f 
+/bin/rm -f getgb1r.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgb1r.f 
+/bin/rm -f getgbmp.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbmp.f 
+/bin/rm -f putgbn.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgbn.f 
+/bin/rm -f w3fi74.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi74.f 
+/bin/rm -f getgb1re.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgb1re.f 
+/bin/rm -f getgbp.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbp.f 
+/bin/rm -f r63w72.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c r63w72.f 
+/bin/rm -f w3fi75.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi75.f 
+/bin/rm -f getgb1s.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgb1s.f 
+/bin/rm -f getgi.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgi.f 
+/bin/rm -f sbyte.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c sbyte.f 
+/bin/rm -f w3fi76.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi76.f 
+/bin/rm -f getgbe.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbe.f 
+/bin/rm -f getgir.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgir.f 
+/bin/rm -f sbytes.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c sbytes.f 
+/bin/rm -f w3fi82.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi82.f 
+/bin/rm -f getgbeh.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbeh.f 
+/bin/rm -f idsdef.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c idsdef.f 
+/bin/rm -f w3fi83.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi83.f 
+/bin/rm -f getgbem.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbem.f 
+/bin/rm -f iw3jdn.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c iw3jdn.f 
+/bin/rm -f w3difdat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3difdat.f 
+/bin/rm -f w3fs26.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fs26.f 
+/bin/rm -f getgbemh.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbemh.f 
+/bin/rm -f ixgb.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c ixgb.f 
+/bin/rm -f w3doxdat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3doxdat.f 
+/bin/rm -f w3log.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3log.f 
+/bin/rm -f getgbemp.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbemp.f 
+/bin/rm -f lengds.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c lengds.f 
+/bin/rm -f w3fi01.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi01.f 
+/bin/rm -f w3movdat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3movdat.f 
+/bin/rm -f getgbens.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbens.f 
+/bin/rm -f pdsens.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c pdsens.f 
+/bin/rm -f w3fi58.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi58.f 
+/bin/rm -f w3reddat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3reddat.f 
+/bin/rm -f getgbep.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbep.f 
+/bin/rm -f pdseup.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c pdseup.f 
+/bin/rm -f w3fi59.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi59.f 
+/bin/rm -f w3tagb.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3tagb.f 
+/bin/rm -f errmsg.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c errmsg.f 
+/bin/rm -f getgbex.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbex.f 
+/bin/rm -f putgb.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgb.f 
+/bin/rm -f w3fi63.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi63.f 
+/bin/rm -f gbytes.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c gbytes.f 
+/bin/rm -f getgbexm.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbexm.f 
+/bin/rm -f putgbe.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgbe.f 
+/bin/rm -f w3fi68.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi68.f 
+/bin/rm -f gbytes_char.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c gbytes_char.f 
+/bin/rm -f getgbh.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbh.f 
+/bin/rm -f putgben.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgben.f 
+/bin/rm -f getbit.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getbit.f 
+/bin/rm -f getgbm.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c getgbm.f 
+/bin/rm -f putgbens.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c putgbens.f 
+/bin/rm -f w3fi72.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi72.f 
+/bin/rm -f fparsei.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c fparsei.f 
+/bin/rm -f fparser.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c fparser.f 
+/bin/rm -f instrument.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c instrument.f 
+/bin/rm -f start.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c start.f 
+/bin/rm -f summary.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c summary.f 
+/bin/rm -f w3utcdat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3utcdat.f 
+/bin/rm -f w3fs21.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fs21.f 
+/bin/rm -f w3locdat.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3locdat.f 
+/bin/rm -f w3fi71.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c w3fi71.f 
+/bin/rm -f baciof.o
+gfortran -ffixed-form -O -fconvert=big-endian -frecord-marker=4 -c baciof.f 
+/bin/rm -f bacio.v1.3.o
+gcc  -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -c bacio.v1.3.c 
+/bin/rm -f errexit.o
+gcc  -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -c errexit.c 
+ar ru  libw3.a bacio_module.o getgb.o     getgbmh.o   putgbex.o   w3fi73.o getgb1r.o   getgbmp.o   putgbn.o    w3fi74.o getgb1re.o  getgbp.o    r63w72.o    w3fi75.o getgb1s.o   getgi.o     sbyte.o     w3fi76.o getgbe.o    getgir.o    sbytes.o    w3fi82.o getgbeh.o   idsdef.o                w3fi83.o getgbem.o   iw3jdn.o    w3difdat.o  w3fs26.o getgbemh.o  ixgb.o      w3doxdat.o  w3log.o getgbemp.o  lengds.o    w3fi01.o    w3movdat.o getgbens.o  pdsens.o    w3fi58.o    w3reddat.o getgbep.o   pdseup.o    w3fi59.o    w3tagb.o errmsg.o    getgbex.o   putgb.o     w3fi63.o gbytes.o    getgbexm.o  putgbe.o    w3fi68.o gbytes_char.o           getgbh.o    putgben.o getbit.o    getgbm.o    putgbens.o  w3fi72.o fparsei.o   fparser.o   instrument.o start.o     summary.o   w3utcdat.o  w3fs21.o w3locdat.o  w3fi71.o    baciof.o bacio.v1.3.o errexit.o
+ar: creating archive libw3.a
+ranlib libw3.a
+ln -sf w3/libw3.a .
+( cd g2 ; make -i -r DEV_TOP="/Users/fraserking/Development/NoahMP/extra/wrf4/WPS" all ; ranlib libg2_4.a )
+Makefile:67: warning: overriding commands for target `.F.o'
+/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/configure.wps:106: warning: ignoring old commands for target `.F.o'
+Makefile:72: warning: overriding commands for target `.f.o'
+/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/configure.wps:102: warning: ignoring old commands for target `.f.o'
+Makefile:75: warning: overriding commands for target `.c.o'
+/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/configure.wps:98: warning: ignoring old commands for target `.c.o'
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gridtemplates.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 pdstemplates.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 drstemplates.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gribmod.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 realloc.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 intmath.f
+/usr/bin/cpp -P -traditional -DUSE_JPEG2000 -DUSE_PNG addfield.F > addfield.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 addfield.f90
+/bin/rm -f addfield.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 addgrid.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 addlocal.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getfield.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gb_info.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_getfld.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_free.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack1.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack2.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack3.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack4.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack5.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack6.f
+/usr/bin/cpp -P -traditional -DUSE_JPEG2000 -DUSE_PNG gf_unpack7.F > gf_unpack7.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gf_unpack7.f90
+/bin/rm -f gf_unpack7.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gettemplates.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getlocal.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getdim.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getpoly.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gribcreate.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gribend.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gribinfo.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 mkieee.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 rdieee.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 simunpack.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 reduce.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 comunpack.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 specunpack.f
+/usr/bin/cpp -P -traditional -DUSE_JPEG2000 -DUSE_PNG jpcunpack.F > jpcunpack.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 jpcunpack.f90
+/bin/rm -f jpcunpack.f90
+gcc -c  -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -I/usr/local/Cellar/jasper/2.0.16_1/include -DUSE_JPEG2000 -DUSE_PNG -D__64BIT__ dec_jpeg2000.c
+In file included from dec_jpeg2000.c:5:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jasper.h:77:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_image.h:81:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_seq.h:83:
+/usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_math.h:142:15: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+        assert(((-1) << 1) == -2);
+                ~~~~ ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+In file included from dec_jpeg2000.c:5:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jasper.h:77:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_image.h:81:
+In file included from /usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_seq.h:83:
+/usr/local/Cellar/jasper/2.0.16_1/include/jasper/jas_math.h:168:39: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+        assert(((JAS_CAST(int_fast32_t, -1)) << 1) == JAS_CAST(int_fast32_t, -2));
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h:93:25: note: expanded from macro 'assert'
+    (__builtin_expect(!(e), 0) ? __assert_rtn(__func__, __FILE__, __LINE__, #e) : (void)0)
+                        ^
+2 warnings generated.
+/usr/bin/cpp -P -traditional -DUSE_JPEG2000 -DUSE_PNG pngunpack.F > pngunpack.f90
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 pngunpack.f90
+/bin/rm -f pngunpack.f90
+gcc -c  -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -I/usr/local/Cellar/jasper/2.0.16_1/include -DUSE_JPEG2000 -DUSE_PNG -D__64BIT__ dec_png.c
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gbytesc.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 skgb.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 ixgb2.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getidx.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getg2i.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getg2ir.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2s.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2r.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2l.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2p.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 getgb2rp.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 putgb2.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 g2grids.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 gdt2gds.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 params.f
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4 params_ecmwf.f
+gcc -c  -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -I/usr/local/Cellar/jasper/2.0.16_1/include -DUSE_JPEG2000 -DUSE_PNG -D__64BIT__ mova2i.c
+/bin/rm -f libg2_4.a
+ar ru  libg2_4.a gridtemplates.o pdstemplates.o drstemplates.o gribmod.o realloc.o intmath.o addfield.o addgrid.o addlocal.o getfield.o gb_info.o gf_getfld.o gf_free.o gf_unpack1.o gf_unpack2.o gf_unpack3.o gf_unpack4.o gf_unpack5.o gf_unpack6.o gf_unpack7.o gettemplates.o getlocal.o getdim.o getpoly.o gribcreate.o gribend.o gribinfo.o mkieee.o rdieee.o simunpack.o reduce.o comunpack.o specunpack.o jpcunpack.o dec_jpeg2000.o pngunpack.o dec_png.o gbytesc.o skgb.o ixgb2.o getidx.o getg2i.o getg2ir.o getgb2s.o getgb2r.o getgb2l.o getgb2.o getgb2p.o getgb2rp.o putgb2.o g2grids.o gdt2gds.o params.o params_ecmwf.o mova2i.o
+ar: creating archive libg2_4.a
+ranlib libg2_4.a
+ln -sf g2/libg2_4.a .
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r ungrib.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB" )
+Makefile:90: warning: overriding commands for target `.F.o'
+../../configure.wps:106: warning: ignoring old commands for target `.F.o'
+Makefile:95: warning: overriding commands for target `.c.o'
+../../configure.wps:98: warning: ignoring old commands for target `.c.o'
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG misc_definitions_module.F > misc_definitions_module.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 misc_definitions_module.f90
+/bin/rm -f debug_cio.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB  -c debug_cio.c
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG module_debug.F > module_debug.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 module_debug.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG module_stringutil.F > module_stringutil.f90
+module_stringutil.F:67:53: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                    ^
+module_stringutil.F:67:55: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                      ^
+2 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 module_stringutil.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG table.F > table.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 table.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG module_datarray.F > module_datarray.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 module_datarray.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG gridinfo.F > gridinfo.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 gridinfo.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG new_storage.F > new_storage.f90
+new_storage.F:182:37: warning: missing terminating ' character [-Winvalid-pp-token]
+          if (verbose.gt.0) write(*,'("PUT_STORAGE: Overwriting ", A,&
+                                    ^
+new_storage.F:183:49: warning: missing terminating ' character [-Winvalid-pp-token]
+            &" to ID ", I8, "   Value: ", F16.6)') current%id, nnode%id,&
+                                                ^
+new_storage.F:195:31: warning: missing terminating ' character [-Winvalid-pp-token]
+    if (verbose.gt.0) write(*,'("PUT_STORAGE: Writing ", A,&
+                              ^
+new_storage.F:196:46: warning: missing terminating ' character [-Winvalid-pp-token]
+         &" to ID ", I8, "   Value: ", F16.6)') current%id, nnode%id, data(1,1)
+                                             ^
+new_storage.F:222:37: warning: missing terminating ' character [-Winvalid-pp-token]
+          if (verbose.gt.0) write(*,'("REFW_STORAGE: OverWriting ", A,&
+                                    ^
+new_storage.F:223:52: warning: missing terminating ' character [-Winvalid-pp-token]
+               &" to ID ", I8, "   Value: ", F16.6)') current%id, nnode%id,&
+                                                   ^
+new_storage.F:236:31: warning: missing terminating ' character [-Winvalid-pp-token]
+    if (verbose.gt.0) write(*,'("REFW_STORAGE: Writing ", A,&
+                              ^
+new_storage.F:237:46: warning: missing terminating ' character [-Winvalid-pp-token]
+         &" to ID ", I8, "   Value: ", F16.6)') current%id, nnode%id,&
+                                             ^
+new_storage.F:261:37: warning: missing terminating ' character [-Winvalid-pp-token]
+          if (verbose.gt.0) write(*,'("GET_STORAGE: READING ", A,&
+                                    ^
+new_storage.F:262:51: warning: missing terminating ' character [-Winvalid-pp-token]
+              &" at ID ", I8, "   Value: ", F16.6)') current%id, nnode%id,&
+                                                  ^
+new_storage.F:290:37: warning: missing terminating ' character [-Winvalid-pp-token]
+          if (verbose.gt.0) write(*,'("REFR_STORAGE: Referencing ", A,&
+                                    ^
+new_storage.F:291:46: warning: missing terminating ' character [-Winvalid-pp-token]
+         &" at ID ", I8, "   Value: ", F16.6)') current%id, nnode%id,&
+                                             ^
+12 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 new_storage.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG filelist.F > filelist.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 filelist.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG ungrib.F > ungrib.f90
+ungrib.F:79:67: warning: missing terminating ' character [-Winvalid-pp-token]
+  character(LEN=132) :: gribflnm = 'GRIBFILE.AAA        '    ! won't work with len=12
+                                                                  ^
+ungrib.F:132:13: warning: missing terminating ' character [-Winvalid-pp-token]
+!   NCAR/RDA's EC 113 data are grib1 with a non-standard record length
+            ^
+2 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 ungrib.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG output.F > output.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 output.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG rrpr.F > rrpr.f90
+rrpr.F:250:38: warning: missing terminating '"' character [-Winvalid-pp-token]
+          call mprintf(.true.,ERROR, "Adding user-defined pressure levels resulted in too &
+                                     ^
+rrpr.F:251:76: warning: missing terminating '"' character [-Winvalid-pp-token]
+           &many total pressure levels.  Please increase maxlvl in ungrib.F")
+                                                                           ^
+rrpr.F:360:11: warning: missing terminating ' character [-Winvalid-pp-token]
+!--- Tanya's change for initializing WRF with RUC
+          ^
+rrpr.F:372:11: warning: missing terminating ' character [-Winvalid-pp-token]
+!--- Tanya's change for initializing WRF with RUC
+          ^
+rrpr.F:892:48: warning: missing terminating ' character [-Winvalid-pp-token]
+            scr2d = scr2d * 0.005    ! Use real's default method (200:1)
+                                               ^
+rrpr.F:901:9: warning: missing terminating ' character [-Winvalid-pp-token]
+!! If we've got a SEAICE field, make sure that it is all Zeros and Ones:
+        ^
+rrpr.F:908:8: warning: missing terminating ' character [-Winvalid-pp-token]
+! If we've got an ICEMASK field, re-flag it for output to met_em and real:
+       ^
+rrpr.F:1066:29: warning: missing terminating ' character [-Winvalid-pp-token]
+      return     ! if we don't have pressure on model levels, return
+                            ^
+rrpr.F:1102:29: warning: missing terminating ' character [-Winvalid-pp-token]
+      return     ! if we don't have pressure on model levels, return
+                            ^
+rrpr.F:1200:11: warning: missing terminating ' character [-Winvalid-pp-token]
+  write(*,'("Interpolating to fill in ", A, " at level ", F8.2, " hPa using levels ", F8.2," hPa and ",& 
+          ^
+rrpr.F:1201:20: warning: missing terminating ' character [-Winvalid-pp-token]
+     & F8.2," hPa")') trim(name), plvl(k)/100.0,plvl(k-1)/100.0, plvl(k2)/100.0
+                   ^
+rrpr.F:1323:59: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! formulae are very similar from 0 to -20, so we don't need a more exact formula.
+                                                          ^
+12 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 rrpr.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG rd_grib1.F > rd_grib1.f90
+rd_grib1.F:386:7: warning: missing terminating ' character [-Winvalid-pp-token]
+! NCEP's grib1 messages (in GDS Octet 17, the Resolution and Component Flags)
+      ^
+rd_grib1.F:389:5: warning: missing terminating ' character [-Winvalid-pp-token]
+! It's not clear what ECMWF uses. One place says 6367.47 and another 6371.229.
+    ^
+rd_grib1.F:406:75: warning: missing terminating ' character [-Winvalid-pp-token]
+     if ( ABS(map%nx * map%dx - 360.) .lt. 2. ) then         ! Check if it's a global grid
+                                                                          ^
+rd_grib1.F:480:75: warning: missing terminating ' character [-Winvalid-pp-token]
+     if ( ABS(map%nx * map%dx - 360.) .lt. 2. ) then         ! Check if it's a global grid
+                                                                          ^
+4 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 rd_grib1.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG file_delete.F > file_delete.f90
+file_delete.F:42:12: warning: missing terminating ' character [-Winvalid-pp-token]
+  write(*, '(/,10("*"), /, &
+           ^
+file_delete.F:44:22: warning: missing terminating ' character [-Winvalid-pp-token]
+       &    10("*")/)')
+                     ^
+file_delete.F:62:12: warning: missing terminating ' character [-Winvalid-pp-token]
+  write(*, '(/,10("*"), /, &
+           ^
+file_delete.F:64:22: warning: missing terminating ' character [-Winvalid-pp-token]
+       &    10("*")/)')
+                     ^
+4 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 file_delete.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG datint.F > datint.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 datint.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB rd_grib2.F > rd_grib2.f90
+rd_grib2.F:194:48: warning: missing terminating ' character [-Winvalid-pp-token]
+! Extract forecast time. Assume the first field's valid time is true for all fields.
+                                               ^
+rd_grib2.F:195:13: warning: missing terminating ' character [-Winvalid-pp-token]
+! This doesn't have to be true, but ungrib is designed to decode one time-level at
+            ^
+rd_grib2.F:396:43: warning: missing terminating '"' character [-Winvalid-pp-token]
+               call mprintf(.true.,STDOUT,"WARNING - Basic angle option 
+                                          ^
+rd_grib2.F:397:45: warning: missing terminating '"' character [-Winvalid-pp-token]
+     &has not been tested, continuing anyway")
+                                            ^
+rd_grib2.F:398:44: warning: missing terminating '"' character [-Winvalid-pp-token]
+               call mprintf(.true.,LOGFILE,"WARNING - Basic angle option 
+                                           ^
+rd_grib2.F:399:46: warning: missing terminating '"' character [-Winvalid-pp-token]
+     & has not been tested, continuing anyway")
+                                             ^
+rd_grib2.F:537:43: warning: missing terminating '"' character [-Winvalid-pp-token]
+               call mprintf(.true.,STDOUT,"WARNING - Basic angle option 
+                                          ^
+rd_grib2.F:538:45: warning: missing terminating '"' character [-Winvalid-pp-token]
+     &has not been tested, continuing anyway")
+                                            ^
+rd_grib2.F:539:44: warning: missing terminating '"' character [-Winvalid-pp-token]
+               call mprintf(.true.,LOGFILE,"WARNING - Basic angle option 
+                                           ^
+rd_grib2.F:540:46: warning: missing terminating '"' character [-Winvalid-pp-token]
+     & has not been tested, continuing anyway")
+                                             ^
+rd_grib2.F:555:53: warning: missing terminating ' character [-Winvalid-pp-token]
+       ! If the projection is not known, then it can't be processed by metgrid/plotfmt
+                                                    ^
+rd_grib2.F:559:38: warning: missing terminating '"' character [-Winvalid-pp-token]
+           call mprintf(.true.,DEBUG,"G2 igrid = %i ,  dx = %f ,  dy = %
+                                     ^
+rd_grib2.F:560:9: warning: missing terminating '"' character [-Winvalid-pp-token]
+     &f ", newline=.true., i1 = map%igrid, f1=map%dx, f2=map%dy)
+        ^
+rd_grib2.F:666:38: warning: missing terminating '"' character [-Winvalid-pp-token]
+           call mprintf(.true.,DEBUG,"G2 Searching the g2code array (Vta
+                                     ^
+rd_grib2.F:667:50: warning: missing terminating '"' character [-Winvalid-pp-token]
+     &ble) for this grib field %i %i %i %i %i %i ", newline=.true.,
+                                                 ^
+rd_grib2.F:799:45: warning: missing terminating '"' character [-Winvalid-pp-token]
+                 call mprintf(.true.,INFORM,"Rd_grib2 does not know abou
+                                            ^
+rd_grib2.F:801:43: warning: missing terminating '"' character [-Winvalid-pp-token]
+     &s level, rd_grib2.F must be modified", i1 = gfld%ipdtmpl(10),
+                                          ^
+rd_grib2.F:825:41: warning: missing terminating '"' character [-Winvalid-pp-token]
+!             call mprintf(.true.,DEBUG,"Calling put_storage for
+                                        ^
+rd_grib2.F:826:46: warning: missing terminating '"' character [-Winvalid-pp-token]
+!    &level = %i , field = %s , g2level = %i ", newline=.true.,
+                                             ^
+rd_grib2.F:1126:15: warning: missing terminating ' character [-Winvalid-pp-token]
+!  Grib2 doesn't have a grid-number entry, so we have to figure it out
+              ^
+rd_grib2.F:1176:52: warning: missing terminating ' character [-Winvalid-pp-token]
+! Grib2 Code Table 3.2. Returns the spherical earth's radius in km.
+                                                   ^
+21 warnings generated.
+gfortran -c -ffixed-form -O -fconvert=big-endian -frecord-marker=4  rd_grib2.f90 -I. -I./ngl/g2
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG build_hdate.F > build_hdate.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 build_hdate.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG geth_newdate.F > geth_newdate.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 geth_newdate.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG geth_idts.F > geth_idts.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 geth_idts.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG swap.F > swap.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 swap.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG parse_table.F > parse_table.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 parse_table.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG gbytesys.F > gbytesys.f90
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 gbytesys.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG gribcode.F > gribcode.f90
+gribcode.F:67:49: warning: trigraph ignored [-Wtrigraphs]
+!      10  :  Bottom value of a layer ( 0 if NA ??)                           !
+                                                ^
+gribcode.F:1806:17: warning: missing terminating ' character [-Winvalid-pp-token]
+        write(*,'(" Perhaps the analysis file should have been converted",/,&
+                ^
+gribcode.F:1807:46: warning: missing terminating ' character [-Winvalid-pp-token]
+             &" from COS-Blocked format?",//)')
+                                             ^
+3 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 gribcode.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB -DUSE_JPEG2000 -DUSE_PNG read_namelist.F > read_namelist.f90
+read_namelist.F:271:57: warning: missing terminating ' character [-Winvalid-pp-token]
+! Check to see if I should create my own set of new_plvl's
+                                                        ^
+1 warning generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 read_namelist.f90
+/bin/rm -f cio.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UNGRIB  -c cio.c
+cio.c:52:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+c_open(unit, nunit, name, mode, err, oflag)
+^
+cio.c:24:16: note: expanded from macro 'c_open'
+#define c_open c_open_
+               ^
+cio.c:117:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+bn_seek(fd, bread, mode, iprint)
+^
+cio.c:27:17: note: expanded from macro 'bn_seek'
+#define bn_seek bn_seek_
+                ^
+cio.c:148:47: warning: format specifies type 'int' but the argument has type 'off_t' (aka 'long long') [-Wformat]
+       printf(" lseek return=%d, *mode=%d\n", i, *mode);
+                             ~~               ^
+                             %lld
+cio.c:155:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+bn_read(fd, buf, nbuf, bread, ios, idiag)
+^
+cio.c:26:17: note: expanded from macro 'bn_read'
+#define bn_read bn_read_
+                ^
+cio.c:201:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+bnwrit_(fd, buf, nbuf, bwritten, err, idiag)
+^
+cio.c:235:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+c_close(nunit, iprint, err)
+^
+cio.c:25:17: note: expanded from macro 'c_close'
+#define c_close c_close_
+                ^
+6 warnings generated.
+/bin/rm -f libpgu.a
+ar ru libpgu.a build_hdate.o geth_newdate.o geth_idts.o swap.o table.o parse_table.o gbytesys.o gribcode.o read_namelist.o cio.o
+ar: creating archive libpgu.a
+ranlib libpgu.a
+/bin/rm -f ungrib.exe
+if [ -z  ] ; then \
+			  gfortran -o ungrib.exe  misc_definitions_module.o debug_cio.o module_debug.o module_stringutil.o table.o module_datarray.o gridinfo.o new_storage.o filelist.o ungrib.o output.o rrpr.o rd_grib1.o file_delete.o datint.o rd_grib2.o  \
+				-L./ngl -lw3 -lg2_4 \
+				-L/usr/local/Cellar/jasper/2.0.16_1/lib -ljasper -lpng -lz \
+				-L. -lpgu ; \
+                        else \
+			  gfortran -o ungrib.exe  misc_definitions_module.o debug_cio.o module_debug.o module_stringutil.o table.o module_datarray.o gridinfo.o new_storage.o filelist.o ungrib.o output.o rrpr.o rd_grib1.o file_delete.o datint.o rd_grib2.o  \
+				./ngl/w3/libw3.a ./ngl/g2/libg2_4.a \
+				-L/usr/local/Cellar/jasper/2.0.16_1/lib -ljasper -lpng -lz \
+				libpgu.a ; \
+                        fi
+ld: library not found for -lpng
+collect2: error: ld returned 1 exit status
+make[1]: [ungrib.exe] Error 1 (ignored)
+if [ -h ungrib.exe ] ; then \
+	        /bin/rm -f ungrib.exe ; \
+	fi ; \
+	if [ -h ../ungrib.exe ] ; then \
+		/bin/rm -f ../ungrib.exe ; \
+	fi ; \
+	if [ -e src/ungrib.exe ] ; then \
+		ln -sf src/ungrib.exe . ; \
+	fi
+/bin/rm -f cio.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID  -c cio.c	
+/bin/rm -f misc_definitions_module.o misc_definitions_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include misc_definitions_module.F > misc_definitions_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c misc_definitions_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f parallel_module.o parallel_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include parallel_module.F > parallel_module.f90
+parallel_module.F:215:26: warning: missing terminating ' character [-Winvalid-pp-token]
+   ! Copied from RSL_LITE's task_for_point.c until a good way can be found to
+                         ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c parallel_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_debug.o module_debug.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_debug.F > module_debug.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_debug.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f gridinfo_module.o gridinfo_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include gridinfo_module.F > gridinfo_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c gridinfo_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f wrf_debug.o wrf_debug.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include wrf_debug.F > wrf_debug.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c wrf_debug.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f bitarray_module.o bitarray_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include bitarray_module.F > bitarray_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c bitarray_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f constants_module.o constants_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include constants_module.F > constants_module.f90
+constants_module.F:15:15: warning: missing terminating ' character [-Winvalid-pp-token]
+   ! with NCEP's routines and grids.
+              ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c constants_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f datatype_module.o datatype_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include datatype_module.F > datatype_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c datatype_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_stringutil.o module_stringutil.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_stringutil.F > module_stringutil.f90
+module_stringutil.F:67:53: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                    ^
+module_stringutil.F:67:55: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                      ^
+2 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_stringutil.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f list_module.o list_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include list_module.F > list_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c list_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f interp_option_module.o interp_option_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include interp_option_module.F > interp_option_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c interp_option_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_date_pack.o module_date_pack.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_date_pack.F > module_date_pack.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_date_pack.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f queue_module.o queue_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include queue_module.F > queue_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c queue_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f input_module.o input_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include input_module.F > input_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c input_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f interp_module.o interp_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include interp_module.F > interp_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c interp_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_map_utils.o module_map_utils.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_map_utils.F > module_map_utils.f90
+module_map_utils.F:19:21: warning: missing terminating ' character [-Winvalid-pp-token]
+! obtained from NCEP's w3 library.  The original NCEP routines were less
+                    ^
+module_map_utils.F:58:46: warning: missing terminating ' character [-Winvalid-pp-token]
+!          line which is parallel to the grid's y-axis (j-direction), along
+                                             ^
+module_map_utils.F:113:55: warning: missing terminating ' character [-Winvalid-pp-token]
+!       not the values returned are within your domain's bounds.  All values
+                                                      ^
+module_map_utils.F:119:32: warning: missing terminating '"' character [-Winvalid-pp-token]
+!  Hoke, Hayes, and Renninger, "Map Preojections and Grid Systems for
+                               ^
+module_map_utils.F:120:37: warning: missing terminating '"' character [-Winvalid-pp-token]
+!       Meteorological Applications." AFGWC/TN-79/003(Rev), Air Weather
+                                    ^
+module_map_utils.F:1132:70: warning: missing terminating '"' character [-Winvalid-pp-token]
+      REAL, INTENT(IN)             :: truelat2  !   "   "  "   "     "
+                                                                     ^
+module_map_utils.F:1143:14: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! Earth's surface at this latitude.  For secant projections, the cone
+             ^
+module_map_utils.F:1144:29: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! intersects the Earth's surface at each of the distinctly different
+                            ^
+module_map_utils.F:1922:67: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  Now, these could be upside down from what we want, so let's check.
+                                                                  ^
+module_map_utils.F:1969:66: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  ordinary Legendre polynomial of degree NLAT using Newton's
+                                                                 ^
+module_map_utils.F:2144:28: warning: missing terminating ' character [-Winvalid-pp-token]
+      !  relative east/west'ness of the longitude and the starting longitude are consistent
+                           ^
+11 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_map_utils.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f llxy_module.o llxy_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include llxy_module.F > llxy_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c llxy_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_mergesort.o module_mergesort.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_mergesort.F > module_mergesort.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_mergesort.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f minheap_module.o minheap_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include minheap_module.F > minheap_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c minheap_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f storage_module.o storage_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include storage_module.F > storage_module.f90
+storage_module.F:85:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is already a list for this fieldname
+          ^
+storage_module.F:224:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is already a list for this fieldname
+          ^
+storage_module.F:315:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is already a list for this fieldname
+          ^
+storage_module.F:368:22: warning: empty character constant [-Winvalid-pp-token]
+      derived_from = ''
+                     ^
+storage_module.F:566:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is a list for this fieldname
+          ^
+storage_module.F:653:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is a list for this fieldname
+          ^
+storage_module.F:747:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is a list for this header 
+          ^
+storage_module.F:793:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is already a list for this fieldname
+          ^
+storage_module.F:1106:11: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! We'll first see if there is already a list for this fieldname
+          ^
+9 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c storage_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f output_module.o output_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include output_module.F > output_module.f90
+output_module.F:1147:15: warning: missing terminating ' character [-Winvalid-pp-token]
+! BUG: Shouldn't we set sd/ed to be domain_start/domain_end?
+              ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c output_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f met_data_module.o met_data_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include met_data_module.F > met_data_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c met_data_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f read_met_module.o read_met_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include read_met_module.F > read_met_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c read_met_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f rotate_winds_module.o rotate_winds_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include rotate_winds_module.F > rotate_winds_module.f90
+rotate_winds_module.F:107:68: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! If the proj_info structure has not been initialized, we don't have
+                                                                   ^
+rotate_winds_module.F:474:68: warning: missing terminating ' character [-Winvalid-pp-token]
+      ! If the proj_info structure has not been initialized, we don't have
+                                                                   ^
+2 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c rotate_winds_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f scan_input.o scan_input.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include scan_input.F > scan_input.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c scan_input.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f mpas_mesh.o mpas_mesh.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include mpas_mesh.F > mpas_mesh.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c mpas_mesh.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f target_mesh.o target_mesh.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include target_mesh.F > target_mesh.f90
+target_mesh.F:62:87: warning: empty character constant [-Winvalid-pp-token]
+            write(0,*) 'Reading target domain specification from file ''target_domain'''
+                                                                                      ^
+target_mesh.F:198:55: warning: empty character constant [-Winvalid-pp-token]
+           if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                      ^
+target_mesh.F:198:57: warning: empty character constant [-Winvalid-pp-token]
+           if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                        ^
+3 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c target_mesh.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f remapper.o remapper.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include remapper.F > remapper.f90
+remapper.F:1032:43: warning: missing terminating ' character [-Winvalid-pp-token]
+    !>  Uses the spherical analog of Heron's formula.
+                                          ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c remapper.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f process_domain_module.o process_domain_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include process_domain_module.F > process_domain_module.f90
+process_domain_module.F:2863:26: warning: missing terminating ' character [-Winvalid-pp-token]
+            ! If this isn't a 3-d array, nothing to do
+                         ^
+process_domain_module.F:3079:58: warning: missing terminating ' character [-Winvalid-pp-token]
+            ! We only want to fill all levels if we haven't already filled "all" of them
+                                                         ^
+process_domain_module.F:3149:45: warning: missing terminating ' character [-Winvalid-pp-token]
+                        ! If the field doesn't have any levels (or does not exist) then we have not
+                                            ^
+3 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c process_domain_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f metgrid.o metgrid.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include metgrid.F > metgrid.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c metgrid.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f write_met_module.o write_met_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_METGRID -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include write_met_module.F > write_met_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c write_met_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran  -o metgrid.exe cio.o wrf_debug.o bitarray_module.o constants_module.o datatype_module.o module_stringutil.o gridinfo_module.o metgrid.o input_module.o interp_module.o interp_option_module.o list_module.o llxy_module.o met_data_module.o minheap_module.o misc_definitions_module.o module_date_pack.o module_debug.o module_map_utils.o module_mergesort.o output_module.o parallel_module.o process_domain_module.o queue_module.o read_met_module.o rotate_winds_module.o storage_module.o write_met_module.o scan_input.o mpas_mesh.o target_mesh.o remapper.o \
+                /Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_driver_constants.o \
+		/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/pack_utils.o /Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_machine.o \
+		/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/frame/module_internal_header_util.o \
+                -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include \
+                -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -lio_grib1 -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -lio_grib_share -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -lwrfio_int -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -lwrfio_nf -L/usr/local/Cellar/netcdf/4.6.3_1/lib -lnetcdff -lnetcdf \
+                
+( cd src/ngl ; make -i -r DEV_TOP="/Users/fraserking/Development/NoahMP/extra/wrf4/WPS" CC="gcc" FC="gfortran" RANLIB="ranlib" all )
+make[1]: Nothing to be done for `all'.
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r g1print.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GRIBUTIL" )
+Makefile:90: warning: overriding commands for target `.F.o'
+../../configure.wps:106: warning: ignoring old commands for target `.F.o'
+Makefile:95: warning: overriding commands for target `.c.o'
+../../configure.wps:98: warning: ignoring old commands for target `.c.o'
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GRIBUTIL -DUSE_JPEG2000 -DUSE_PNG g1print.F > g1print.f90
+g1print.F:27:31: warning: missing terminating ' character [-Winvalid-pp-token]
+  character(len=100) :: fmt = '(I4,1X, &
+                              ^
+g1print.F:31:30: warning: missing terminating ' character [-Winvalid-pp-token]
+       & I2.2, 1x, "+", i3.2)'
+                             ^
+g1print.F:46:14: warning: missing terminating ' character [-Winvalid-pp-token]
+     write(*,'("     -V   : Print way too much information about the GRIB&
+             ^
+g1print.F:47:20: warning: missing terminating '"' character [-Winvalid-pp-token]
+          & records")')
+                   ^
+g1print.F:266:9: warning: missing terminating ' character [-Winvalid-pp-token]
+! We don't have the complete tables here, just enough for normal wrf use.
+        ^
+5 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4 g1print.f90
+gfortran -o g1print.exe  g1print.o gribcode.o module_debug.o debug_cio.o libpgu.a
+if [ -h g1print.exe ] ; then \
+	        /bin/rm -f g1print.exe ; \
+	fi ; \
+	if [ -h ../g1print.exe ] ; then \
+		/bin/rm -f ../g1print.exe ; \
+	fi ; \
+	if [ -e src/g1print.exe ] ; then \
+		ln -sf src/g1print.exe . ; \
+	fi
+( cd src/ngl ; make -i -r DEV_TOP="/Users/fraserking/Development/NoahMP/extra/wrf4/WPS" CC="gcc" FC="gfortran" RANLIB="ranlib" all )
+make[1]: Nothing to be done for `all'.
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r g2print.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GRIBUTIL" )
+Makefile:90: warning: overriding commands for target `.F.o'
+../../configure.wps:106: warning: ignoring old commands for target `.F.o'
+Makefile:95: warning: overriding commands for target `.c.o'
+../../configure.wps:98: warning: ignoring old commands for target `.c.o'
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_GRIBUTIL g2print.F > g2print.f90
+g2print.F:59:14: warning: missing terminating ' character [-Winvalid-pp-token]
+     write(*,'("     -V   : Print way too much information about the GRIB&
+             ^
+g2print.F:60:20: warning: missing terminating '"' character [-Winvalid-pp-token]
+          & records")')
+                   ^
+g2print.F:890:24: warning: missing terminating ' character [-Winvalid-pp-token]
+!          write(*,fmt='("G2 MIN=",f21.8," AVE=",f21.8,    &
+                       ^
+g2print.F:891:31: warning: missing terminating ' character [-Winvalid-pp-token]
+!               " MAX=",f21.8)') fldmin,sum/gfld%ndpts,fldmax
+                              ^
+4 warnings generated.
+gfortran -c -ffree-form -O -fconvert=big-endian -frecord-marker=4  g2print.f90 -I. -I./ngl/g2
+if [ -z  ] ; then \
+			  gfortran -o g2print.exe  g2print.o \
+				filelist.o gridinfo.o \
+				-L. -lpgu \
+				-L./ngl -lw3 -lg2_4 \
+				-L/usr/local/Cellar/jasper/2.0.16_1/lib -ljasper -lpng -lz ; \
+                        else \
+			  gfortran -o g2print.exe  g2print.o \
+				filelist.o gridinfo.o \
+				libpgu.a  \
+				./ngl/w3/libw3.a ./ngl/g2/libg2_4.a \
+				-L/usr/local/Cellar/jasper/2.0.16_1/lib -ljasper -lpng -lz ; \
+                        fi
+ld: library not found for -lpng
+collect2: error: ld returned 1 exit status
+make[1]: [g2print.exe] Error 1 (ignored)
+if [ -h g2print.exe ] ; then \
+	        /bin/rm -f g2print.exe ; \
+	fi ; \
+	if [ -h ../g2print.exe ] ; then \
+		/bin/rm -f ../g2print.exe ; \
+	fi ; \
+	if [ -e src/g2print.exe ] ; then \
+		ln -sf src/g2print.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r rd_intermediate.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f cio.o
+gcc -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL  -c cio.c	
+/bin/rm -f module_debug.o module_debug.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_debug.F > module_debug.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_debug.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f met_data_module.o met_data_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include met_data_module.F > met_data_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c met_data_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f constants_module.o constants_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include constants_module.F > constants_module.f90
+constants_module.F:15:15: warning: missing terminating ' character [-Winvalid-pp-token]
+   ! with NCEP's routines and grids.
+              ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c constants_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f misc_definitions_module.o misc_definitions_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include misc_definitions_module.F > misc_definitions_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c misc_definitions_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f read_met_module.o read_met_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include read_met_module.F > read_met_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c read_met_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f rd_intermediate.o rd_intermediate.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include rd_intermediate.F > rd_intermediate.f90
+rd_intermediate.F:96:37: warning: empty character constant [-Winvalid-pp-token]
+         CALL mprintf(.true.,STDOUT,'')
+                                    ^
+1 warning generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c rd_intermediate.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran -o rd_intermediate.exe  rd_intermediate.o read_met_module.o \
+		module_debug.o misc_definitions_module.o cio.o met_data_module.o constants_module.o
+if [ -h rd_intermediate.exe ] ; then \
+		/bin/rm -f rd_intermediate.exe ; \
+	fi ; \
+	if [ -h ../rd_intermediate.exe ] ; then \
+		/bin/rm -f ../rd_intermediate.exe ; \
+	fi ; \
+	if [ -e src/rd_intermediate.exe ] ; then \
+		ln -sf src/rd_intermediate.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r mod_levs.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f write_met_module.o write_met_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include write_met_module.F > write_met_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c write_met_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f mod_levs.o mod_levs.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include mod_levs.F > mod_levs.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c mod_levs.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran -o mod_levs.exe  mod_levs.o module_debug.o read_met_module.o \
+		write_met_module.o misc_definitions_module.o cio.o met_data_module.o constants_module.o
+if [ -h mod_levs.exe ] ; then \
+		/bin/rm -f mod_levs.exe ; \
+	fi ; \
+	if [ -h ../mod_levs.exe ] ; then \
+		/bin/rm -f ../mod_levs.exe ; \
+	fi ; \
+	if [ -e src/mod_levs.exe ] ; then \
+		ln -sf src/mod_levs.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r avg_tsfc.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f gridinfo_module.o gridinfo_module.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include gridinfo_module.F > gridinfo_module.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c gridinfo_module.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f module_date_pack.o module_date_pack.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_date_pack.F > module_date_pack.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_date_pack.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f avg_tsfc.o avg_tsfc.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include avg_tsfc.F > avg_tsfc.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c avg_tsfc.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran  -o avg_tsfc.exe avg_tsfc.o cio.o module_debug.o gridinfo_module.o \
+		read_met_module.o write_met_module.o module_date_pack.o \
+		misc_definitions_module.o met_data_module.o constants_module.o
+if [ -h avg_tsfc.exe ] ; then \
+		/bin/rm -f avg_tsfc.exe ; \
+	fi ; \
+	if [ -h ../avg_tsfc.exe ] ; then \
+		/bin/rm -f ../avg_tsfc.exe ; \
+	fi ; \
+	if [ -e src/avg_tsfc.exe ] ; then \
+		ln -sf src/avg_tsfc.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r calc_ecmwf_p.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f module_stringutil.o module_stringutil.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include module_stringutil.F > module_stringutil.f90
+module_stringutil.F:67:53: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                    ^
+module_stringutil.F:67:55: warning: empty character constant [-Winvalid-pp-token]
+         if (string(i:i) == '"' .or. string(i:i) == '''') iquoted = mod(iquoted+1,2)
+                                                      ^
+2 warnings generated.
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c module_stringutil.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+/bin/rm -f calc_ecmwf_p.o calc_ecmwf_p.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include calc_ecmwf_p.F > calc_ecmwf_p.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c calc_ecmwf_p.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran  -o calc_ecmwf_p.exe calc_ecmwf_p.o cio.o module_debug.o module_stringutil.o gridinfo_module.o \
+		read_met_module.o write_met_module.o module_date_pack.o \
+		misc_definitions_module.o met_data_module.o constants_module.o
+if [ -h calc_ecmwf_p.exe ] ; then \
+		/bin/rm -f calc_ecmwf_p.exe ; \
+	fi ; \
+	if [ -h ../calc_ecmwf_p.exe ] ; then \
+		/bin/rm -f ../calc_ecmwf_p.exe ; \
+	fi ; \
+	if [ -e src/calc_ecmwf_p.exe ] ; then \
+		ln -sf src/calc_ecmwf_p.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r height_ukmo.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f height_ukmo.o height_ukmo.mod
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL -DUSE_JPEG2000 -DUSE_PNG -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include height_ukmo.F > height_ukmo.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -c height_ukmo.f90 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include
+gfortran  -o height_ukmo.exe height_ukmo.o cio.o module_debug.o gridinfo_module.o \
+		read_met_module.o write_met_module.o module_date_pack.o \
+		misc_definitions_module.o met_data_module.o constants_module.o
+if [ -h height_ukmo.exe ] ; then \
+		/bin/rm -f height_ukmo.exe ; \
+	fi ; \
+	if [ -h ../height_ukmo.exe ] ; then \
+		/bin/rm -f ../height_ukmo.exe ; \
+	fi ; \
+	if [ -e src/height_ukmo.exe ] ; then \
+		ln -sf src/height_ukmo.exe . ; \
+	fi
+( cd src ; \
+        if [ "" = yes ] ; then \
+          WRF_DIR2=../WRF ; \
+        else \
+          WRF_DIR2=/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF ; \
+        fi ; \
+	make -i -r int2nc.exe \
+		WRF_DIR="$WRF_DIR2" \
+		FC="gfortran" \
+		CC="gcc" \
+		CPP="/usr/bin/cpp -P -traditional" \
+		FFLAGS="-ffree-form -O -fconvert=big-endian -frecord-marker=4" \
+		CFLAGS="" \
+		LDFLAGS="" \
+		CPPFLAGS="-D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL" )
+/bin/rm -f int2nc.f90
+/usr/bin/cpp -P -traditional -D_UNDERSCORE -DBYTESWAP -DIO_NETCDF -DBIT32 -DMACOS -DNO_SIGNAL  -D_UTIL int2nc.F > int2nc.f90
+gfortran -ffree-form -O -fconvert=big-endian -frecord-marker=4 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include -c int2nc.f90
+gfortran -o int2nc.exe  -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -I/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/inc -I/usr/local/Cellar/netcdf/4.6.3_1/include int2nc.o module_debug.o misc_definitions_module.o read_met_module.o cio.o -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib1 -lio_grib1 -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_grib_share -lio_grib_share -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_int -lwrfio_int -L/Users/fraserking/Development/NoahMP/extra/wrf4/WPS/../WRF/external/io_netcdf -lwrfio_nf -L/usr/local/Cellar/netcdf/4.6.3_1/lib -lnetcdff -lnetcdf 
+if [ -h int2nc.exe ] ; then \
+		/bin/rm -f int2nc.exe ; \
+	fi ; \
+	if [ -h ../int2nc.exe ] ; then \
+		/bin/rm -f ../int2nc.exe ; \
+	fi ; \
+	if [ -e src/int2nc.exe ] ; then \
+		ln -sf src/int2nc.exe . ; \
+	fi

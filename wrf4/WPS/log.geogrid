@@ -1,0 +1,82 @@
+Parsed 28 entries in GEOGRID.TBL
+Processing domain 1 of 2
+  Processing XLAT and XLONG
+  Processing MAPFAC
+  Processing F and E
+  Processing ROTANG
+  Processing LANDUSEF
+  Calculating landmask from LANDUSEF ( WATER =  17  21 )
+  Processing HGT_M
+  Processing SOILTEMP
+  Processing SOILCTOP
+  Processing SCT_DOM
+  Processing SOILCBOT
+  Processing SCB_DOM
+  Processing ALBEDO12M
+  Processing GREENFRAC
+  Processing LAI12M
+  Processing SNOALB
+  Processing CON
+  Processing VAR
+  Processing OA1
+  Processing OA2
+  Processing OA3
+  Processing OA4
+  Processing OL1
+  Processing OL2
+  Processing OL3
+  Processing OL4
+  Processing VAR_SSO
+
+  Optional fields not processed by geogrid:
+    LAKE_DEPTH (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/')
+    URB_PARAM (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/')
+    FRC_URB2D (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/')
+    IMPERV (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/')
+    CANFRA (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/')
+    EROD (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/')
+    CLAYFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/')
+    SANDFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/')
+
+Processing domain 2 of 2
+  Processing XLAT and XLONG
+  Processing MAPFAC
+  Processing F and E
+  Processing ROTANG
+  Processing LANDUSEF
+  Calculating landmask from LANDUSEF ( WATER =  17  21 )
+  Processing HGT_M
+  Processing SOILTEMP
+  Processing SOILCTOP
+  Processing SCT_DOM
+  Processing SOILCBOT
+  Processing SCB_DOM
+  Processing ALBEDO12M
+  Processing GREENFRAC
+  Processing LAI12M
+  Processing SNOALB
+  Processing CON
+  Processing VAR
+  Processing OA1
+  Processing OA2
+  Processing OA3
+  Processing OA4
+  Processing OL1
+  Processing OL2
+  Processing OL3
+  Processing OL4
+  Processing VAR_SSO
+
+  Optional fields not processed by geogrid:
+    LAKE_DEPTH (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/')
+    URB_PARAM (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/')
+    FRC_URB2D (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/')
+    IMPERV (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/')
+    CANFRA (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/')
+    EROD (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/')
+    CLAYFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/')
+    SANDFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/')
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  Successful completion of geogrid.        !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

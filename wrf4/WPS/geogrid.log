@@ -1,0 +1,290 @@
+2019-09-09 14:27:07.913 ---  *** Starting program geogrid.exe ***
+2019-09-09 14:27:07.915 --- Using the following namelist variables:
+2019-09-09 14:27:07.915 --- &SHARE
+2019-09-09 14:27:07.915 ---   WRF_CORE         = ARW
+2019-09-09 14:27:07.915 ---   MAX_DOM          = 2
+2019-09-09 14:27:07.915 ---   START_YEAR       = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.915 ---   START_MONTH      = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.915 ---   START_DAY        = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.915 ---   START_HOUR       = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.915 ---   START_MINUTE     = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.915 ---   START_SECOND     = 0
+2019-09-09 14:27:07.915 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_YEAR         = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_MONTH        = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_DAY          = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_HOUR         = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_MINUTE       = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   END_SECOND       = 0
+2019-09-09 14:27:07.916 ---                    = 0
+2019-09-09 14:27:07.916 ---   START_DATE       = 2010-01-01_12:00:00
+2019-09-09 14:27:07.916 ---                    = 2010-01-01_12:00:00
+2019-09-09 14:27:07.916 ---   END_DATE         = 2010-12-30_18:00:00
+2019-09-09 14:27:07.916 ---                    = 2010-01-01_12:00:00
+2019-09-09 14:27:07.916 ---   INTERVAL_SECONDS = 21600
+2019-09-09 14:27:07.916 ---   IO_FORM_GEOGRID  = 2
+2019-09-09 14:27:07.916 ---   OPT_OUTPUT_FROM_GEOGRID_PATH = ./
+2019-09-09 14:27:07.916 ---   SUBGRID_RATIO_X  = 1
+2019-09-09 14:27:07.916 ---                    = 1
+2019-09-09 14:27:07.916 ---   SUBGRID_RATIO_Y  = 1
+2019-09-09 14:27:07.916 ---                    = 1
+2019-09-09 14:27:07.916 ---   DEBUG_LEVEL      = 0
+2019-09-09 14:27:07.916 ---   ACTIVE_GRID      = .TRUE.
+2019-09-09 14:27:07.916 ---                    = .TRUE.
+2019-09-09 14:27:07.916 ---   NOCOLONS         = .FALSE.
+2019-09-09 14:27:07.916 --- /
+2019-09-09 14:27:07.916 --- &GEOGRID
+2019-09-09 14:27:07.916 ---   PARENT_ID         = 1
+2019-09-09 14:27:07.916 ---                     = 1
+2019-09-09 14:27:07.916 ---   PARENT_GRID_RATIO = 1
+2019-09-09 14:27:07.916 ---                     = 3
+2019-09-09 14:27:07.916 ---   I_PARENT_START    = 1
+2019-09-09 14:27:07.916 ---                     = 31
+2019-09-09 14:27:07.916 ---   J_PARENT_START    = 1
+2019-09-09 14:27:07.916 ---                     = 17
+2019-09-09 14:27:07.916 ---   S_WE              = 1
+2019-09-09 14:27:07.916 ---                     = 1
+2019-09-09 14:27:07.916 ---   E_WE              = 74
+2019-09-09 14:27:07.916 ---                     = 112
+2019-09-09 14:27:07.916 ---   S_SN              = 1
+2019-09-09 14:27:07.916 ---                     = 1
+2019-09-09 14:27:07.916 ---   E_SN              = 61
+2019-09-09 14:27:07.917 ---                     = 97
+2019-09-09 14:27:07.917 ---   GEOG_DATA_RES     = default
+2019-09-09 14:27:07.917 ---                     = default
+2019-09-09 14:27:07.917 ---   DX                = 30000.000000
+2019-09-09 14:27:07.917 ---   DY                = 30000.000000
+2019-09-09 14:27:07.917 ---   MAP_PROJ          = lambert
+2019-09-09 14:27:07.917 ---   POLE_LAT          = 90.000000
+2019-09-09 14:27:07.917 ---   POLE_LON          = 0.000000
+2019-09-09 14:27:07.917 ---   REF_LAT           = 34.830002
+2019-09-09 14:27:07.917 ---   REF_LON           = -81.029999
+2019-09-09 14:27:07.917 ---   REF_X             = 100000002004087734272.000000
+2019-09-09 14:27:07.917 ---   REF_Y             = 100000002004087734272.000000
+2019-09-09 14:27:07.917 ---   TRUELAT1          = 30.000000
+2019-09-09 14:27:07.917 ---   TRUELAT2          = 60.000000
+2019-09-09 14:27:07.917 ---   STAND_LON         = -98.000000
+2019-09-09 14:27:07.917 ---   GEOG_DATA_PATH    = /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/
+2019-09-09 14:27:07.917 ---   OPT_GEOGRID_TBL_PATH = geogrid/
+2019-09-09 14:27:07.917 --- /
+2019-09-09 14:27:07.921 --- Processing domain 1 of 2
+2019-09-09 14:27:07.921 --- INFORM: Using default interpolator sequence for HGT_M.
+2019-09-09 14:27:07.921 --- INFORM: Using default data source for HGT_M.
+2019-09-09 14:27:07.929 --- INFORM: Using default interpolator sequence for LANDUSEF.
+2019-09-09 14:27:07.929 --- INFORM: Using default data source for LANDUSEF.
+2019-09-09 14:27:07.931 --- INFORM: Using default interpolator sequence for SOILTEMP.
+2019-09-09 14:27:07.931 --- INFORM: Using default data source for SOILTEMP.
+2019-09-09 14:27:07.933 --- INFORM: Using default interpolator sequence for SOILCTOP.
+2019-09-09 14:27:07.933 --- INFORM: Using default data source for SOILCTOP.
+2019-09-09 14:27:07.935 --- INFORM: Using default interpolator sequence for SOILCBOT.
+2019-09-09 14:27:07.935 --- INFORM: Using default data source for SOILCBOT.
+2019-09-09 14:27:07.936 --- INFORM: Using default interpolator sequence for ALBEDO12M.
+2019-09-09 14:27:07.936 --- INFORM: Using default data source for ALBEDO12M.
+2019-09-09 14:27:07.937 --- INFORM: Using default interpolator sequence for GREENFRAC.
+2019-09-09 14:27:07.937 --- INFORM: Using default data source for GREENFRAC.
+2019-09-09 14:27:07.939 --- INFORM: Using default interpolator sequence for LAI12M.
+2019-09-09 14:27:07.939 --- INFORM: Using default data source for LAI12M.
+2019-09-09 14:27:07.941 --- INFORM: Using default interpolator sequence for SNOALB.
+2019-09-09 14:27:07.941 --- INFORM: Using default data source for SNOALB.
+2019-09-09 14:27:07.942 --- INFORM: Using default interpolator sequence for CON.
+2019-09-09 14:27:07.942 --- INFORM: Using default data source for CON.
+2019-09-09 14:27:07.943 --- INFORM: Using default interpolator sequence for VAR.
+2019-09-09 14:27:07.943 --- INFORM: Using default data source for VAR.
+2019-09-09 14:27:07.944 --- INFORM: Using default interpolator sequence for OA1.
+2019-09-09 14:27:07.944 --- INFORM: Using default data source for OA1.
+2019-09-09 14:27:07.945 --- INFORM: Using default interpolator sequence for OA2.
+2019-09-09 14:27:07.945 --- INFORM: Using default data source for OA2.
+2019-09-09 14:27:07.945 --- INFORM: Using default interpolator sequence for OA3.
+2019-09-09 14:27:07.945 --- INFORM: Using default data source for OA3.
+2019-09-09 14:27:07.946 --- INFORM: Using default interpolator sequence for OA4.
+2019-09-09 14:27:07.946 --- INFORM: Using default data source for OA4.
+2019-09-09 14:27:07.947 --- INFORM: Using default interpolator sequence for OL1.
+2019-09-09 14:27:07.947 --- INFORM: Using default data source for OL1.
+2019-09-09 14:27:07.947 --- INFORM: Using default interpolator sequence for OL2.
+2019-09-09 14:27:07.948 --- INFORM: Using default data source for OL2.
+2019-09-09 14:27:07.948 --- INFORM: Using default interpolator sequence for OL3.
+2019-09-09 14:27:07.948 --- INFORM: Using default data source for OL3.
+2019-09-09 14:27:07.949 --- INFORM: Using default interpolator sequence for OL4.
+2019-09-09 14:27:07.949 --- INFORM: Using default data source for OL4.
+2019-09-09 14:27:07.949 --- INFORM: Using default interpolator sequence for VAR_SSO.
+2019-09-09 14:27:07.950 --- INFORM: Using default data source for VAR_SSO.
+2019-09-09 14:27:07.951 --- INFORM: Using default interpolator sequence for LAKE_DEPTH.
+2019-09-09 14:27:07.951 --- INFORM: Using default data source for LAKE_DEPTH.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/index for field LAKE_DEPTH
+2019-09-09 14:27:07.952 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.952 --- INFORM: Using default interpolator sequence for URB_PARAM.
+2019-09-09 14:27:07.952 --- INFORM: Using default data source for URB_PARAM.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/index for field URB_PARAM
+2019-09-09 14:27:07.952 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.952 --- INFORM: Using default interpolator sequence for FRC_URB2D.
+2019-09-09 14:27:07.952 --- INFORM: Using default data source for FRC_URB2D.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/index for field FRC_URB2D
+2019-09-09 14:27:07.952 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.952 --- INFORM: Using default interpolator sequence for IMPERV.
+2019-09-09 14:27:07.952 --- INFORM: Using default data source for IMPERV.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/index for field IMPERV
+2019-09-09 14:27:07.952 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.952 --- INFORM: Using default interpolator sequence for CANFRA.
+2019-09-09 14:27:07.952 --- INFORM: Using default data source for CANFRA.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/index for field CANFRA
+2019-09-09 14:27:07.952 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.952 --- INFORM: Using default interpolator sequence for EROD.
+2019-09-09 14:27:07.952 --- INFORM: Using default data source for EROD.
+2019-09-09 14:27:07.952 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/index for field EROD
+2019-09-09 14:27:07.953 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.953 --- INFORM: Using default interpolator sequence for CLAYFRAC.
+2019-09-09 14:27:07.953 --- INFORM: Using default data source for CLAYFRAC.
+2019-09-09 14:27:07.953 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/index for field CLAYFRAC
+2019-09-09 14:27:07.953 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.953 --- INFORM: Using default interpolator sequence for SANDFRAC.
+2019-09-09 14:27:07.953 --- INFORM: Using default data source for SANDFRAC.
+2019-09-09 14:27:07.953 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/index for field SANDFRAC
+2019-09-09 14:27:07.953 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:07.996 --- Processing field 1 of 23 (LANDUSEF)
+2019-09-09 14:27:10.666 --- Processing field 2 of 23 (LU_INDEX)
+2019-09-09 14:27:10.667 --- Processing field 3 of 23 (HGT_M)
+2019-09-09 14:27:13.810 --- Processing field 4 of 23 (SOILTEMP)
+2019-09-09 14:27:13.820 --- Processing field 5 of 23 (SOILCTOP)
+2019-09-09 14:27:16.455 --- Processing field 6 of 23 (SCT_DOM)
+2019-09-09 14:27:16.456 --- Processing field 7 of 23 (SOILCBOT)
+2019-09-09 14:27:19.097 --- Processing field 8 of 23 (SCB_DOM)
+2019-09-09 14:27:19.098 --- Processing field 9 of 23 (ALBEDO12M)
+2019-09-09 14:27:21.119 --- Processing field 10 of 23 (GREENFRAC)
+2019-09-09 14:27:29.629 --- Processing field 11 of 23 (LAI12M)
+2019-09-09 14:27:29.663 --- Processing field 12 of 23 (SNOALB)
+2019-09-09 14:27:29.838 --- Processing field 13 of 23 (CON)
+2019-09-09 14:27:29.965 --- Processing field 14 of 23 (VAR)
+2019-09-09 14:27:30.091 --- Processing field 15 of 23 (OA1)
+2019-09-09 14:27:30.221 --- Processing field 16 of 23 (OA2)
+2019-09-09 14:27:30.350 --- Processing field 17 of 23 (OA3)
+2019-09-09 14:27:30.481 --- Processing field 18 of 23 (OA4)
+2019-09-09 14:27:30.605 --- Processing field 19 of 23 (OL1)
+2019-09-09 14:27:30.732 --- Processing field 20 of 23 (OL2)
+2019-09-09 14:27:30.859 --- Processing field 21 of 23 (OL3)
+2019-09-09 14:27:30.985 --- Processing field 22 of 23 (OL4)
+2019-09-09 14:27:31.111 --- Processing field 23 of 23 (VAR_SSO)
+2019-09-09 14:27:31.130 --- Optional fields not processed by geogrid:
+2019-09-09 14:27:31.130 ---     LAKE_DEPTH (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/')
+2019-09-09 14:27:31.130 ---     URB_PARAM (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/')
+2019-09-09 14:27:31.130 ---     FRC_URB2D (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/')
+2019-09-09 14:27:31.130 ---     IMPERV (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/')
+2019-09-09 14:27:31.130 ---     CANFRA (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/')
+2019-09-09 14:27:31.131 ---     EROD (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/')
+2019-09-09 14:27:31.131 ---     CLAYFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/')
+2019-09-09 14:27:31.131 ---     SANDFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/')
+2019-09-09 14:27:31.131 --- Processing domain 2 of 2
+2019-09-09 14:27:31.131 --- INFORM: Using default interpolator sequence for HGT_M.
+2019-09-09 14:27:31.131 --- INFORM: Using default data source for HGT_M.
+2019-09-09 14:27:31.132 --- INFORM: Using default interpolator sequence for LANDUSEF.
+2019-09-09 14:27:31.132 --- INFORM: Using default data source for LANDUSEF.
+2019-09-09 14:27:31.132 --- INFORM: Using default interpolator sequence for SOILTEMP.
+2019-09-09 14:27:31.133 --- INFORM: Using default data source for SOILTEMP.
+2019-09-09 14:27:31.133 --- INFORM: Using default interpolator sequence for SOILCTOP.
+2019-09-09 14:27:31.133 --- INFORM: Using default data source for SOILCTOP.
+2019-09-09 14:27:31.134 --- INFORM: Using default interpolator sequence for SOILCBOT.
+2019-09-09 14:27:31.134 --- INFORM: Using default data source for SOILCBOT.
+2019-09-09 14:27:31.135 --- INFORM: Using default interpolator sequence for ALBEDO12M.
+2019-09-09 14:27:31.135 --- INFORM: Using default data source for ALBEDO12M.
+2019-09-09 14:27:31.136 --- INFORM: Using default interpolator sequence for GREENFRAC.
+2019-09-09 14:27:31.136 --- INFORM: Using default data source for GREENFRAC.
+2019-09-09 14:27:31.137 --- INFORM: Using default interpolator sequence for LAI12M.
+2019-09-09 14:27:31.137 --- INFORM: Using default data source for LAI12M.
+2019-09-09 14:27:31.137 --- INFORM: Using default interpolator sequence for SNOALB.
+2019-09-09 14:27:31.137 --- INFORM: Using default data source for SNOALB.
+2019-09-09 14:27:31.138 --- INFORM: Using default interpolator sequence for CON.
+2019-09-09 14:27:31.138 --- INFORM: Using default data source for CON.
+2019-09-09 14:27:31.139 --- INFORM: Using default interpolator sequence for VAR.
+2019-09-09 14:27:31.139 --- INFORM: Using default data source for VAR.
+2019-09-09 14:27:31.139 --- INFORM: Using default interpolator sequence for OA1.
+2019-09-09 14:27:31.139 --- INFORM: Using default data source for OA1.
+2019-09-09 14:27:31.140 --- INFORM: Using default interpolator sequence for OA2.
+2019-09-09 14:27:31.140 --- INFORM: Using default data source for OA2.
+2019-09-09 14:27:31.141 --- INFORM: Using default interpolator sequence for OA3.
+2019-09-09 14:27:31.141 --- INFORM: Using default data source for OA3.
+2019-09-09 14:27:31.141 --- INFORM: Using default interpolator sequence for OA4.
+2019-09-09 14:27:31.141 --- INFORM: Using default data source for OA4.
+2019-09-09 14:27:31.142 --- INFORM: Using default interpolator sequence for OL1.
+2019-09-09 14:27:31.142 --- INFORM: Using default data source for OL1.
+2019-09-09 14:27:31.142 --- INFORM: Using default interpolator sequence for OL2.
+2019-09-09 14:27:31.142 --- INFORM: Using default data source for OL2.
+2019-09-09 14:27:31.143 --- INFORM: Using default interpolator sequence for OL3.
+2019-09-09 14:27:31.143 --- INFORM: Using default data source for OL3.
+2019-09-09 14:27:31.144 --- INFORM: Using default interpolator sequence for OL4.
+2019-09-09 14:27:31.144 --- INFORM: Using default data source for OL4.
+2019-09-09 14:27:31.144 --- INFORM: Using default interpolator sequence for VAR_SSO.
+2019-09-09 14:27:31.144 --- INFORM: Using default data source for VAR_SSO.
+2019-09-09 14:27:31.145 --- INFORM: Using default interpolator sequence for LAKE_DEPTH.
+2019-09-09 14:27:31.145 --- INFORM: Using default data source for LAKE_DEPTH.
+2019-09-09 14:27:31.145 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/index for field LAKE_DEPTH
+2019-09-09 14:27:31.145 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.145 --- INFORM: Using default interpolator sequence for URB_PARAM.
+2019-09-09 14:27:31.145 --- INFORM: Using default data source for URB_PARAM.
+2019-09-09 14:27:31.145 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/index for field URB_PARAM
+2019-09-09 14:27:31.145 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.145 --- INFORM: Using default interpolator sequence for FRC_URB2D.
+2019-09-09 14:27:31.145 --- INFORM: Using default data source for FRC_URB2D.
+2019-09-09 14:27:31.145 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/index for field FRC_URB2D
+2019-09-09 14:27:31.145 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.145 --- INFORM: Using default interpolator sequence for IMPERV.
+2019-09-09 14:27:31.145 --- INFORM: Using default data source for IMPERV.
+2019-09-09 14:27:31.145 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/index for field IMPERV
+2019-09-09 14:27:31.145 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.146 --- INFORM: Using default interpolator sequence for CANFRA.
+2019-09-09 14:27:31.146 --- INFORM: Using default data source for CANFRA.
+2019-09-09 14:27:31.146 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/index for field CANFRA
+2019-09-09 14:27:31.146 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.146 --- INFORM: Using default interpolator sequence for EROD.
+2019-09-09 14:27:31.146 --- INFORM: Using default data source for EROD.
+2019-09-09 14:27:31.146 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/index for field EROD
+2019-09-09 14:27:31.146 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.146 --- INFORM: Using default interpolator sequence for CLAYFRAC.
+2019-09-09 14:27:31.146 --- INFORM: Using default data source for CLAYFRAC.
+2019-09-09 14:27:31.146 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/index for field CLAYFRAC
+2019-09-09 14:27:31.146 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.146 --- INFORM: Using default interpolator sequence for SANDFRAC.
+2019-09-09 14:27:31.146 --- INFORM: Using default data source for SANDFRAC.
+2019-09-09 14:27:31.146 --- INFORM: Could not read 'index' file /Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/index for field SANDFRAC
+2019-09-09 14:27:31.146 --- INFORM: This field is optional and will not be processed.
+2019-09-09 14:27:31.190 --- Processing field 1 of 23 (LANDUSEF)
+2019-09-09 14:27:32.376 --- Processing field 2 of 23 (LU_INDEX)
+2019-09-09 14:27:32.377 --- Processing field 3 of 23 (HGT_M)
+2019-09-09 14:27:33.568 --- Processing field 4 of 23 (SOILTEMP)
+2019-09-09 14:27:33.578 --- Processing field 5 of 23 (SOILCTOP)
+2019-09-09 14:27:34.733 --- Processing field 6 of 23 (SCT_DOM)
+2019-09-09 14:27:34.734 --- Processing field 7 of 23 (SOILCBOT)
+2019-09-09 14:27:35.899 --- Processing field 8 of 23 (SCB_DOM)
+2019-09-09 14:27:35.900 --- Processing field 9 of 23 (ALBEDO12M)
+2019-09-09 14:27:36.032 --- Processing field 10 of 23 (GREENFRAC)
+2019-09-09 14:27:37.725 --- Processing field 11 of 23 (LAI12M)
+2019-09-09 14:27:37.754 --- Processing field 12 of 23 (SNOALB)
+2019-09-09 14:27:37.775 --- Processing field 13 of 23 (CON)
+2019-09-09 14:27:37.797 --- Processing field 14 of 23 (VAR)
+2019-09-09 14:27:37.819 --- Processing field 15 of 23 (OA1)
+2019-09-09 14:27:37.842 --- Processing field 16 of 23 (OA2)
+2019-09-09 14:27:37.867 --- Processing field 17 of 23 (OA3)
+2019-09-09 14:27:37.892 --- Processing field 18 of 23 (OA4)
+2019-09-09 14:27:37.918 --- Processing field 19 of 23 (OL1)
+2019-09-09 14:27:37.939 --- Processing field 20 of 23 (OL2)
+2019-09-09 14:27:37.961 --- Processing field 21 of 23 (OL3)
+2019-09-09 14:27:37.983 --- Processing field 22 of 23 (OL4)
+2019-09-09 14:27:38.005 --- Processing field 23 of 23 (VAR_SSO)
+2019-09-09 14:27:38.031 --- Optional fields not processed by geogrid:
+2019-09-09 14:27:38.031 ---     LAKE_DEPTH (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/lake_depth/')
+2019-09-09 14:27:38.031 ---     URB_PARAM (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/NUDAPT44_1km/')
+2019-09-09 14:27:38.031 ---     FRC_URB2D (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/urbfrac_nlcd2011/')
+2019-09-09 14:27:38.031 ---     IMPERV (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_imp_ll_9s/')
+2019-09-09 14:27:38.031 ---     CANFRA (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/nlcd2011_can_ll_9s/')
+2019-09-09 14:27:38.031 ---     EROD (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/erod/')
+2019-09-09 14:27:38.031 ---     CLAYFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/clayfrac_5m/')
+2019-09-09 14:27:38.031 ---     SANDFRAC (priority=1, resolution='default', path='/Volumes/Samsung_T5/Data/WRF_static/WPS_GEOG/sandfrac_5m/')
+2019-09-09 14:27:38.031 ---  *** Successful completion of program geogrid.exe ***
