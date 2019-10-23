@@ -1,0 +1,100 @@
+While users can select from any of the available compilers that the WRF and WPS codes support, for our demonstration we will use the GNU compilers.  Users need to insure that they have version 4.4.0 (or anything more recent).  Following is a list of executables closely tied to the free GNU compiling system for C and Fortran source codes:
+cpp
+gcc
+gfortran
+
+
+In addition to the compilers required to manufacture the WRF executables, the WRF build system has scripts as the top level for the user interface. The WRF scripting system uses:
+csh
+perl
+sh
+
+ 
+Finally, inside of the scripts are quite a few UNIX commands that are available regardless of which shell you are using.  Following is a list of standard Unix commands that are assumed tovi be available:
+ar
+awk
+cat
+cd
+cp
+cut
+expr
+file
+grep
+gzip
+head
+hostname
+ln
+ls
+make
+mkdir
+mv
+nm
+printf
+rm
+sed
+sleep
+sort
+tar
+touch
+tr
+uname
+wc
+which
+
+
+
+The files to do the testing with:
+
+Fixed format Fortran:
+TEST_1_fortran_only_fixed.f
+gfortran TEST_1_fortran_only_fixed.f
+a.out
+ SUCCESS test 1 fortran only fixed format
+
+Free format Fortran:
+TEST_2_fortran_only_free.f90
+gfortran TEST_2_fortran_only_free.f90
+a.out
+ Assume Fortran 2003: has FLUSH, ALLOCATABLE derived type, and ISO C Binding
+ SUCCESS test 2 fortran only free format
+
+C: 
+TEST_3_c_only.c
+gcc TEST_3_c_only.c
+a.out
+SUCCESS test 3 C only
+
+Fortran calling a C function:
+Our gcc and gfortran have different defaults, so we force both to always use 64 bit (-m64) when combining them.
+TEST_4_fortran+c_c.c
+TEST_4_fortran+c_f.f90
+gcc -c -m64 TEST_4_fortran+c_c.c
+gfortran -c -m64 TEST_4_fortran+c_f.f90
+gfortran -m64 TEST_4_fortran+c_f.o TEST_4_fortran+c_c.o
+a.out
+   C function called by Fortran
+   Values are xx =  2.00 and ii = 1 
+ SUCCESS test 4 fortran calling c
+
+
+
+To check the scripting languages:
+csh:
+./TEST_csh.csh
+SUCCESS csh test
+
+perl:
+./TEST_perl.pl
+SUCCESS perl test
+
+sh:
+./TEST_sh.sh
+SUCCESS sh test
+
+
+
+
+#!/usr/bin/perl
+ print "Hello World.\n";
+
+
