@@ -4,7 +4,6 @@ This guide will help you get HRLDAS set up and running on niagara. It builds on 
 
 
 ## Data/Software Aquisition
-###############################
 
 
 Before we can do anything with HRLDAS on scinet, we need to download the suite of programs and raw forcing data we want to use.
@@ -19,7 +18,6 @@ Before we can do anything with HRLDAS on scinet, we need to download the suite o
 
 
 ## Building WRF, WPS and HRLDAS
-###############################
 
 
 Before we can compile HRLDAS, we need to install a few dependencies. These libraries contain necessary components for running WPS and HRLDAS. Luckily we can just use the WPS package on scinet, however we need to actually compile HRLDAS. If you would like to run WRF and WPS on you machine (this is what I do) feel free to skip the WPS installion module steps and move straight to HRLDAS. 
@@ -93,22 +91,23 @@ Just beautiful, aren't they?
 
 
 ## Preparing Ancillary Data
-###############################
 
 Great! You are making excellent progress and are over half way done. Now comes the (potentially) tricky part however, you need to organize your forcing and initialization data to feed into the HRLDAS preprocessor. I say this is potentially tricky since we need to work with GRIB files here and if your data is in netCDF format then it can be a bit of a pain properly converting it to GRIB. Otherwise it is not too bad. 
 
 In short, we need the following data:
 
-a) We need a single file per forcing, per timestep ∀ timesteps.
-b) We need initialization data for a set of forcing parameters
-c) We need the geoem file produced by WPS to define our study domain
-d) We need a land sea mask which matches the resolution of our forcing data
-e) We need an elevation dataset which matches  the resolution of our forcing data
-f) All of these need to be in GRB format (V1 or V2) with the proper indicatorParameters to match our dataset VTABLE.
+* a) We need a single file per forcing, per timestep ∀ timesteps
+* b) We need initialization data for a set of forcing parameters
+* c) We need the geoem file produced by WPS to define our study domain
+* d) We need a land sea mask which matches the resolution of our forcing data
+* e) We need an elevation dataset which matches  the resolution of our forcing data
+* f) All of these need to be in GRB format (V1 or V2) with the proper indicatorParameters to match our dataset VTABLE.
 
 10. The process for a) typically depends on forcing data you wish to use. ERA5 for insatnce allows you to download GRIB data for each forcing individually. While the GLDAS data we are using are single netCDF files for all forcings which is more work to break up and convert. I won't go through the exact steps I took here, but using whatever language you are most comfortable with, we need to break the data up into the following directories in your NoahMP fdirectory in $SCRATCH:
 
+```
 Rainf Snowf Wind Tair Qair Psurf SWdown LWdown SWdown24 Precip U V INIT
+```
 
 These values are based on the VTABLE we use for GLDAS:
 
@@ -149,7 +148,9 @@ More details on these paramaters can be found here (https://github.com/NCAR/hrld
 
 11. For b), we next need to do a similar procedure for a single timestep (timestep 0) for a few other parametrs to create our initialization files (these go in INIT). You can skip this step if you don't want to initialize using GLDAS states in this case. The INIT variables are:
 
+```
 T2D CANWAT SMOIS(1-4) STEMP(1-4) SNOW
+```
 
 12. For c), follow the steps outlined here (https://github.com/NCAR/hrldas/tree/master/hrldas) for running WRF, WPS and generating a geo_em file. Again, I do this step on my own machine, however we have installed WPS on scinet in step 5, so you can also do this on Niagara if you'd like. 
 
