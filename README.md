@@ -209,7 +209,6 @@ T2D CANWAT SMOIS(1-4) STEMP(1-4) SNOW
 ```
 
 ## Running HRLDAS
-###############################
 
 15. You are basically done now. Inside of the HRLDAS_forcing directory, run:
 
@@ -232,7 +231,6 @@ If successful, you will get netCDF (LDASOUT) files in the *OUTDIR* you set in st
 
 
 ## Final Comments
-###############################
 
 As I previously mentioned, the most difficult part of this process is collecting and organizing your forcing data so this is most likely where you will run into an issue. If you do encounter a problem, first consult the documentation at: (https://github.com/NCAR/hrldas/tree/master/hrldas) as well as the GitHub project issue tracking center. Otherwise, feel free to reach out to me:
 
