@@ -156,7 +156,7 @@ T2D CANWAT SMOIS(1-4) STEMP(1-4) SNOW
 
 13. For steps d) and e), you will need to find these files online for your forcing datasets. Place these in $SCRATCH as well.
 
-14. Now navigate into the HRLDAS_forcing directory and edit the namelist.input.GLDAS file. You will need to configure the start and end data, the path to the forcing data you have organized in steps 10-13  and set up the links to a few other components like the geo_em file. Mine looks something like:
+14. Now pop right into the HRLDAS_forcing directory and edit the namelist.input.GLDAS file. You will need to configure the start and end data, the path to the forcing data you have organized in steps 10-13  and set up the links to a few other components like the geo_em file. Mine looks something like:
 
 ```
  STARTDATE          = "2011-01-01_00"
