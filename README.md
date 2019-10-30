@@ -103,6 +103,23 @@ In short, we need the following data:
 * e) We need an elevation dataset which matches  the resolution of our forcing data
 * f) All of these need to be in GRB format (V1 or V2) with the proper indicatorParameters to match our dataset VTABLE.
 
+### Required INIT data:
+* Soil Temperature (1-4)
+* Soil Moisture (1-4)
+* Canopy Water Content
+* Skin Temperature
+* Water equivalent of accumulated snow depth
+
+### Required forcing data:
+* Near-surface air temperature
+* Near-surface atmospheric mixing ratio
+* Near-surface u-component of the horizontal wind
+* Near-surface v-component of the horizontal wind
+* Surface pressure
+* Precipitation rate
+* Downward shortwave radiation flux at the surface
+* Downward longwave radiation flux at the surface
+
 10. The process for a) typically depends on forcing data you wish to use. ERA5 for insatnce allows you to download GRIB data for each forcing individually. While the GLDAS data we are using are single netCDF files for all forcings which is more work to break up and convert. I won't go through the exact steps I took here, but using whatever language you are most comfortable with, we need to break the data up into the following directories in your NoahMP fdirectory in $SCRATCH:
 
 ```
@@ -232,6 +249,6 @@ If successful, you will get netCDF (LDASOUT) files in the *OUTDIR* you set in st
 
 ## Final Comments
 
-As I previously mentioned, the most difficult part of this process is collecting and organizing your forcing data so this is most likely where you will run into an issue. If you do encounter a problem, first consult the documentation at: (https://github.com/NCAR/hrldas/tree/master/hrldas) as well as the GitHub project issue tracking center. Otherwise, feel free to reach out to me:
+As I previously mentioned, the most difficult part of this process is collecting and organizing your forcing data so this is most likely where you will run into an issue. If you do encounter a problem, first consult the documentation at: (https://github.com/NCAR/hrldas/tree/master/hrldas) as well as the GitHub project issue tracking center. Furthermore, take a look at the *draft* documentation at: https://ral.ucar.edu/sites/default/files/public/product-tool/high-resolution-land-data-assimilation-system-hrldas/HRLDAS_USERS_GUIDE.pdf. Otherwise, feel free to reach out to me:
 
 * **Fraser King** - fdmking@uwaterloo.ca - [frasertheking](https://github.com/frasertheking)
